@@ -1,0 +1,13 @@
+# Ignore source files
+src/
+tsup.config.ts
+tsconfig.json
+
+# Ignore dev stuff
+.vscode/
+node_modules/
+.env
+test
+
+# Ignore misc
+*.DS_Store

@@ -1,0 +1,27 @@
+{
+  "name": "tenor-client",
+  "version": "1.0.0",
+  "description": "Use the Tenor API in an easy-to-use manner.",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "types": "./dist/index.d.ts",
+  "repository": "https://github.com/mallusrgreatv2/tenor-client",
+  "author": "mallusrgreat",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "undici": "^7.7.0"
+  }
+}
