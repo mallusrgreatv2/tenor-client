@@ -1,0 +1,6 @@
+{
+  "entryPoints": ["src"],
+  "plugin": ["typedoc-theme-hierarchy"],
+  "theme": "hierarchy",
+  "name": "tenor-client"
+}

@@ -74,21 +74,26 @@ export class TenorClient {
    *
    * When sticker is included in searchFilter, Tenor's Featured endpoint returns stickers rather than GIFs. In sticker featured responses, {@link TenorResponseObject Response Objects} include transparent {@link TenorContentFormat formats} under the media field.
    */
-  public featured(options: TenorFeaturedOptions) {
+  public featured(options?: TenorFeaturedOptions) {
     const url = new URL("https://tenor.googleapis.com/v2/featured");
-    if (options.searchFilters)
-      url.searchParams.append("searchfilter", options.searchFilters.join(","));
-    if (options.country) url.searchParams.append("country", options.country);
-    if (options.locale) url.searchParams.append("locale", options.locale);
-    if (options.contentFilter)
-      url.searchParams.append("contentfilter", options.contentFilter);
-    if (options.mediaFilter)
-      url.searchParams.append("media_filter", options.mediaFilter.join(","));
-    if (options.aspectRatioRange)
-      url.searchParams.append("ar_range", options.aspectRatioRange);
-    if (options.limit)
-      url.searchParams.append("limit", options.limit.toString());
-    if (options.position) url.searchParams.append("pos", options.position);
+    if (options) {
+      if (options.searchFilters)
+        url.searchParams.append(
+          "searchfilter",
+          options.searchFilters.join(",")
+        );
+      if (options.country) url.searchParams.append("country", options.country);
+      if (options.locale) url.searchParams.append("locale", options.locale);
+      if (options.contentFilter)
+        url.searchParams.append("contentfilter", options.contentFilter);
+      if (options.mediaFilter)
+        url.searchParams.append("media_filter", options.mediaFilter.join(","));
+      if (options.aspectRatioRange)
+        url.searchParams.append("ar_range", options.aspectRatioRange);
+      if (options.limit)
+        url.searchParams.append("limit", options.limit.toString());
+      if (options.position) url.searchParams.append("pos", options.position);
+    }
     return this.request<TenorFeaturedAPIResponse>(url, true);
   }
   /**
@@ -96,13 +101,15 @@ export class TenorClient {
    * Each category includes a corresponding search URL to use if the user clicks on the category.
    * The search URL includes any parameters from the original call to the Categories endpoint.
    */
-  public categories(options: TenorCategoriesOptions) {
+  public categories(options?: TenorCategoriesOptions) {
     const url = new URL("https://tenor.googleapis.com/v2/categories");
-    if (options.country) url.searchParams.append("country", options.country);
-    if (options.locale) url.searchParams.append("locale", options.locale);
-    if (options.contentFilter)
-      url.searchParams.append("contentfilter", options.contentFilter);
-    if (options.type) url.searchParams.append("type", options.type);
+    if (options) {
+      if (options.country) url.searchParams.append("country", options.country);
+      if (options.locale) url.searchParams.append("locale", options.locale);
+      if (options.contentFilter)
+        url.searchParams.append("contentfilter", options.contentFilter);
+      if (options.type) url.searchParams.append("type", options.type);
+    }
     return this.request<TenorCategoriesAPIResponse>(url, true);
   }
   /**
@@ -136,12 +143,14 @@ export class TenorClient {
   /**
    * Get a JSON object that contains a list of the current trending search terms. Tenor's AI updates the list hourly.
    */
-  public trendingSearchTerms(options: TenorTrendingTermsOptions) {
+  public trendingSearchTerms(options?: TenorTrendingTermsOptions) {
     const url = new URL("https://tenor.googleapis.com/v2/trending_terms");
-    if (options.country) url.searchParams.append("country", options.country);
-    if (options.locale) url.searchParams.append("locale", options.locale);
-    if (options.limit)
-      url.searchParams.append("limit", options.limit.toString());
+    if (options) {
+      if (options.country) url.searchParams.append("country", options.country);
+      if (options.locale) url.searchParams.append("locale", options.locale);
+      if (options.limit)
+        url.searchParams.append("limit", options.limit.toString());
+    }
     return this.request<TenorTrendingTermsAPIResponse>(url, true);
   }
   /**
@@ -167,7 +176,7 @@ export class TenorClient {
     return this.request<TenorPostsAPIResponse>(url, true);
   }
 }
-export * from "./types/enums.js";
+export * from "./types/types.js";
 export * from "./types/objects.js";
 export * from "./types/options.js";
 export * from "./types/responses.js";

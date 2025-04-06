@@ -4,7 +4,7 @@ import {
   TenorContentFilter,
   TenorMediaFilter,
   TenorSearchFilter,
-} from "./enums.js";
+} from "./types.js";
 
 export interface TenorClientOptions {
   /**
@@ -84,7 +84,13 @@ export interface TenorSearchOptions {
    */
   position?: string;
 }
+/**
+ * @interface
+ */
 export type TenorFeaturedOptions = Omit<TenorSearchOptions, "query" | "random">;
+/**
+ * @interface
+ */
 export type TenorCategoriesOptions = Pick<
   TenorFeaturedOptions,
   "country" | "locale" | "contentFilter"
@@ -96,15 +102,27 @@ export type TenorCategoriesOptions = Pick<
    */
   type: TenorCategoryType;
 };
+/**
+ * @interface
+ */
 export type TenorSearchSuggestionsOptions = Pick<
   TenorSearchOptions,
   "query" | "country" | "locale" | "limit"
 >;
+/**
+ * @interface
+ */
 export type TenorAutocompleteOptions = TenorSearchSuggestionsOptions;
+/**
+ * @interface
+ */
 export type TenorTrendingTermsOptions = Omit<
   TenorSearchSuggestionsOptions,
   "query"
 >;
+/**
+ * @interface
+ */
 export type TenorRegisterShareOptions = Omit<
   TenorSearchSuggestionsOptions,
   "limit"
@@ -119,6 +137,9 @@ export type TenorRegisterShareOptions = Omit<
    */
   query?: string;
 };
+/**
+ * @interface
+ */
 export type TenorPostsOptions = Pick<TenorFeaturedOptions, "mediaFilter"> & {
   /**
    * A comma-separated list of Response Object IDs.

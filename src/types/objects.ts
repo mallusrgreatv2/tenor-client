@@ -1,4 +1,4 @@
-import { TenorContentFormat, TenorMediaFlag } from "./enums.js";
+import { TenorContentFormat, TenorMediaFlag } from "./types.js";
 
 export interface TenorMediaObject {
   /** A URL to the media source */

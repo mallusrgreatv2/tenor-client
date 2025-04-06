@@ -16,10 +16,25 @@ export type TenorMediaFlag = "sticker" | "static";
  * List of GIF formats to filter the response objects.
  */
 export type TenorMediaFilter =
-  | "gif"
-  | "tinygif"
-  | "mp4"
-  | "tinymp4"
+  | (
+      | "gif"
+      | "mediumgif"
+      | "tinygif"
+      | "nanogif"
+      | "mp4"
+      | "loopedmp4"
+      | "tinymp4"
+      | "nanomp4"
+      | "webm"
+      | "tinywebm"
+      | "nanowebm"
+      | "webp_transparent"
+      | "tinywebp_transparent"
+      | "nanowebp_transparent"
+      | "gif_transparent"
+      | "tinygif_transparent"
+      | "nanogif_transparent"
+    )
   | (string & {});
 /**
  * Constraints for aspect ratio of the GIFs returned as the response objects
@@ -29,22 +44,4 @@ export type TenorMediaFilter =
  */
 export type TenorAspectRatioRange = "all" | "wide" | "standard";
 
-export type TenorContentFormat =
-  | "preview"
-  | "gif"
-  | "mediumgif"
-  | "tinygif"
-  | "nanogif"
-  | "mp4"
-  | "loopedmp4"
-  | "tinymp4"
-  | "nanomp4"
-  | "webm"
-  | "tinywebm"
-  | "nanowebm"
-  | "webp_transparent"
-  | "tinywebp_transparent"
-  | "nanowebp_transparent"
-  | "gif_transparent"
-  | "tinygif_transparent"
-  | "nanogif_transparent";
+export type TenorContentFormat = TenorMediaFilter | "preview";

@@ -2,6 +2,7 @@
 src/
 tsup.config.ts
 tsconfig.json
+docs
 
 # Ignore dev stuff
 .vscode/

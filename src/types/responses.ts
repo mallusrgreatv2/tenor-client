@@ -1,4 +1,4 @@
-import { TenorLocale } from "./enums.js";
+import { TenorLocale } from "./types.js";
 import { TenorCategoryObject, TenorResponseObject } from "./objects.js";
 
 export interface TenorSearchAPIResponse {
@@ -9,6 +9,9 @@ export interface TenorSearchAPIResponse {
   next: string;
   results: TenorResponseObject[];
 }
+/**
+ * @interface
+ */
 export type TenorFeaturedAPIResponse = TenorSearchAPIResponse;
 export interface TenorCategoriesAPIResponse {
   tags: TenorCategoryObject[];
@@ -20,6 +23,9 @@ export interface TenorSearchSuggestionsAPIResponse {
    */
   results: string[];
 }
+/**
+ * @interface
+ */
 export type TenorAutocompleteAPIResponse = TenorSearchSuggestionsAPIResponse;
 export interface TenorTrendingTermsAPIResponse {
   locale: TenorLocale;
