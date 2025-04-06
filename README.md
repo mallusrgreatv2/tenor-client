@@ -41,3 +41,7 @@ client.featured().then(console.log);
 client.categories().then(console.log);
 client.trendingSearchTerms().then(console.log);
 ```
+
+## Documentation
+
+The documentation is hosted here: [https://tenor-client.pages.dev](https://tenor-client.pages.dev/)
